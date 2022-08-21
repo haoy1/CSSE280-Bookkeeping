@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+  <link rel="stylesheet" href="styles/bootstrap-material-design.min.css">
+  <link rel="stylesheet" href="styles/main.css">
+  <title>Transactions</title>
+</head>
+
+<body>
+    
+    <div class="bmd-layout-container bmd-drawer-f-l bmd-drawer-overlay">
+      <header class="bmd-layout-header">
+        <div class="navbar navbar-dark bg-faded fixed-top justify-content-start">
+          <button class="navbar-toggler" type="button" data-toggle="drawer" data-target="#dw-s2">
+            <span class="sr-only">Toggle drawer</span>
+            <i class="material-icons">menu</i>
+          </button>
+          <a class="navbar-brand" href="#">&nbsp;&nbsp;Tranactions</a>
+        </div>
+      </header>
+      <div id="dw-s2" class="bmd-layout-drawer bg-faded">
+        <header>
+          <a class="navbar-brand">Transactions</a>
+        </header>
+        <ul class="list-group">
+          <a id="menuShowAllQuotes" class="list-group-item"><i class="material-icons">people_alt</i>Pie Chart</a>
+          <a id="menuSignOut" class="list-group-item"><i class="material-icons">login</i>Sign Out</a>
+        </ul>
+      </div>
+      <main class="bmd-layout-content">
+        <div id="listPage" class="page-container container ">
+
+
+          <div id="accordion">
+            
+            <div id="group-container" class="container page-container"></div>
+
+          
+           
+          </div>
+        </div>
+      </main>
+    </div>
+
+  <button id="fab" type="button" class="btn bmd-btn-fab" data-toggle="modal" data-target="#addEventDialog">
+    <i class="material-icons">add</i>
+  </button>
+
+
+<!-- Modal -->
+<div class="modal fade" id="addEventDialog" tabindex="-1" role="dialog" aria-labelledby="Add event dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Add Event</h5>
+        
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="inputType" class="bmd-label-floating">Type</label>
+          <span id="iconSelected" class="material-icons"></span>
+          <button class="selectTypeButton" type="button" class="btn" id="inputType" data-toggle="modal" data-target="#selectType">select</button>
+        </div>
+
+        <div class="form-group">
+          <label for="inputType" class="bmd-label-floating">Date&Time</label>
+          <span id="iconSelected" class="material-icons"></span>
+          <input type="datetime-local" id="time">
+
+
+        <div class="form-group bmd-form-group">
+          <label for="inputAmount" class="bmd-label-floating">Amount</label>
+          <input type="number" class="form-control" id="inputAmount" placeholder="$0">
+        </div>
+
+        <div class="form-group bmd-form-group">
+          <label for="inputDescription" class="bmd-label-floating">Description</label>
+          <input type="text" class="form-control" id="inputDescription">
+        </div>
+
+        <div class="form-group bmd-form-group">
+          <!-- <label for="inputIsIncome" class="bmd-label-floating">isIncome</label> -->
+          <input type="checkbox" id="inputIsIncome" value="off" onclick="buttonToggle()"/><label for="switch">&nbsp;&nbsp;Income</label>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">CANCEL</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" id="submitAddEvent">ADD</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="modal fade" id="viewEventDialog" tabindex="-1" role="dialog" aria-labelledby="View event dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Delete</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" id="submitAddEvent">ADD</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="selectType" tabindex="-1" role="dialog" aria-labelledby="Select Type From List" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+
+      </div>
+      <div class="modal-body">
+        <div>
+          <button type="button" onclick="selectType('shopping_cart')"><span class="material-icons">shopping_cart</span></button>
+          <span>Shopping</span>    
+      </div>
+      <div>
+        <button type="button" onclick="selectType('medical_services')"><span class="material-icons">medical_services</span></button>
+        <span>Medical Services</span>    
+      </div>
+      <div>
+        <button type="button" onclick="selectType('school')"><span class="material-icons">school</span></button>
+         <span>Tuition</span>    
+      </div>
+      <div>
+        <button type="button" onclick="selectType('holiday_village')"><span class="material-icons">holiday_village</span></button>
+         <span>Rent</span>    
+      </div>
+      <div>
+        <button type="button" onclick="selectType('restaurant')"><span class="material-icons">restaurant</span></button>
+         <span>dinning</span>    
+      </div>
+      <div>
+        <button type="button" onclick="selectType('airport_shuttle')"><span class="material-icons">airport_shuttle</span></button>
+         <span>traveling</span>    
+      </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">CANCEL</button>
+        <!-- <button type="button" class="btn btn-primary" data-dismiss="modal" id="submitAddEvent">SELECT</button> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="addBackDialog" tabindex="-1" role="dialog" aria-labelledby="Undo Deletion" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+
+      </div>
+      <div class="modal-body">
+        Are you sure to delete?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">YES,DELETE</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" id="undoButton">UNDO</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <script src="scripts/jquery.min.js"></script>
+  <script src="scripts/popper.js"></script>
+  <script src="scripts/bootstrap-material-design.js"></script>
+  <script>$("body").bootstrapMaterialDesign();</script>
+  <script src="/__/firebase/7.18.0/firebase-app.js"></script>
+  <script src="/__/firebase/7.18.0/firebase-analytics.js"></script>
+  <script src="/__/firebase/7.18.0/firebase-firestore.js"></script>
+  <script src="/__/firebase/7.18.0/firebase-auth.js"></script>
+  <script src="/__/firebase/init.js"></script>
+  <script src="scripts/main.js"></script>
+</body>
+
+</html>

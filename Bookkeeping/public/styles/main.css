@@ -1,0 +1,161 @@
+body {
+    background: #DDDDDD;
+}
+
+.navbar {
+    background-color: #d37745;
+    color: white;
+}
+
+.page-container {
+    margin-top: 75px;
+}
+
+#fab {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    background: #d37745;
+    color: white;
+    z-index: 999;
+}
+
+#fab:active{
+    transform: translateY(2px);
+    opacity: 0.8;
+}
+
+.card {
+    margin: 1px 0;
+    border-color: black;
+}
+
+.card-body {
+    padding: 10px;
+}
+
+#listPage .card-title,
+#listPage .card-subtitle {
+    white-space: nowrap;
+    overflow: hidden;
+    display: block;
+    text-overflow: ellipsis;
+}
+
+.dropdown-menu-right {
+    left: -128px;
+}
+
+#roseLogo {
+    max-width: 350px;
+    margin: 20px auto;
+    display: block;
+}
+
+
+.bmd-layout-content {
+    height: 100vh;
+}
+
+
+.bmd-layout-drawer>header {
+    background-color: #d37745;
+    color: white;
+}
+
+.bmd-layout-drawer>ul {
+    background-color: #ddd;
+}
+
+/* .list-group-item :first-child {
+    margin-right: 0.75rem;
+} */
+
+#menuEdit,
+#menuDelete{
+    display: none;
+}
+
+.container {
+    /* margin-top: 20px; */
+    margin-bottom: 20px;
+}
+
+.my-description {
+    margin-left: 50px;
+    margin-bottom: 0px;
+    /* padding-right: 90px; */
+    color: gray;
+    font-weight: bold;
+    font-family: cursive, Helvetica, sans-serif;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    text-overflow: ellipsis;
+    width: 600px;
+}
+
+.cut-text { 
+  text-overflow: ellipsis;
+  overflow: hidden; 
+  width: 160px; 
+  height: 1.2em; 
+  white-space: nowrap;
+}
+
+.amount {
+    float: right;
+    margin-right: 80px;
+    color: red;
+    white-space: nowrap;
+}
+
+.amount-isIncome{
+    float: right;
+    margin-right: 24%;
+    color: green;
+    white-space: nowrap;
+}
+
+.amount-isIncome-top{
+    float: left;
+    margin-left: 62%;
+    color: green;
+}
+
+.my-header-font {
+    float: left;
+    font-size: 1rem;
+}
+
+
+.transaction-card-body {
+    padding: 10px;
+}
+
+.single-transaction{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 33% 33% 33%;
+    margin-bottom: 0;
+}
+
+.my-card {
+    border-radius: 0;
+}
+
+#headingOne {
+    padding: 0.25em;
+}
+
+.date-card {
+    margin-top: 10px;
+    background-color: #e6b333;
+    padding: 0;
+}
+
+.material-icons.md-18 { font-size: 18px; }
+
+.selectTypeButton {
+    float: right;
+}
